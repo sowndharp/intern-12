@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { id: 'home', label: 'Home', href: '#home' },
   { id: 'about', label: 'About', href: '#about' },
   { id: 'services', label: 'Services', href: '#services' },
+  { id: 'pricing', label: 'Pricing', href: '#pricing' },
   { id: 'projects', label: 'Projects', href: '#projects' },
   { id: 'contact', label: 'Contact', href: '#contact' },
 ];

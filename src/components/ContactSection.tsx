@@ -1,10 +1,11 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { ArrowUpRight, CheckCircle2, Copy, MessageSquare } from 'lucide-react';
-import { SERVICES, TEAM_MEMBERS } from '../data/studioData';
+import { PRICING_PLANS, SERVICES, TEAM_MEMBERS } from '../data/studioData';
 import { useReveal } from '../hooks/useReveal';
 
 interface ContactSectionProps {
   selectedService: string;
+  selectionVersion?: number;
 }
 
 interface FormValues {
@@ -22,10 +23,17 @@ interface FormErrors {
 }
 
 const SERVICE_OPTIONS = Array.from(
-  new Set([...SERVICES.map((s) => s.formOption), 'Other']),
+  new Set([
+    ...PRICING_PLANS.map((p) => p.formOption),
+    ...SERVICES.map((s) => s.formOption),
+    'Other',
+  ]),
 );
 
-export function ContactSection({ selectedService }: ContactSectionProps) {
+export function ContactSection({
+  selectedService,
+  selectionVersion = 0,
+}: ContactSectionProps) {
   const { ref, visible } = useReveal<HTMLElement>();
 
   const [values, setValues] = useState<FormValues>({
@@ -44,7 +52,7 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
       setErrors((prev) => ({ ...prev, type: undefined }));
       setPreparedEnquiry(null);
     }
-  }, [selectedService]);
+  }, [selectedService, selectionVersion]);
 
   const validate = (form: FormValues): FormErrors => {
     const nextErrors: FormErrors = {};
@@ -122,7 +130,7 @@ export function ContactSection({ selectedService }: ContactSectionProps) {
     >
       <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-14">
         <p className="text-xs font-semibold tracking-[0.2em] text-[#e2b75d]">
-          05. START A PROJECT
+          06. START A PROJECT
         </p>
 
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">

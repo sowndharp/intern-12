@@ -104,7 +104,7 @@ export function ProjectsSection() {
         <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-[#e2b75d]">
-              03. SELECTED BUILDS
+              04. SELECTED BUILDS
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-[#f6f3ec] text-balance sm:text-5xl">
               Ideas brought{' '}

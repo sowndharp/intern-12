@@ -53,7 +53,155 @@ export interface TeamMember {
   whatsappUrl: string;
 }
 
+export interface PricingTier {
+  id: string;
+  number: string;
+  title: string;
+  formOption: string;
+  priceLabel: string;
+  priceValue: string;
+  description: string;
+  features: string[];
+  featured?: boolean;
+}
+
 export const HERO_VISUAL = '/assets/black-wolf-hero.png';
+
+export const PRICING_PLANS: PricingTier[] = [
+  {
+    id: 'pricing-landing-page',
+    number: '01',
+    title: 'Landing Page Website',
+    formOption: 'Landing Page Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹3,000',
+    description:
+      'A focused single-page website built to present your core offer and generate enquiries.',
+    features: [
+      'Single-page website',
+      'Hero section',
+      'Business information',
+      'Contact section',
+      'Mobile responsive design',
+    ],
+  },
+  {
+    id: 'pricing-business-website',
+    number: '02',
+    title: 'Business Website',
+    formOption: 'Business Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹8,000',
+    description:
+      'A multi-page company presence structured to build credibility and outline your services.',
+    features: [
+      '3–5 pages',
+      'Home, About and Services',
+      'Contact section',
+      'Responsive design',
+    ],
+  },
+  {
+    id: 'pricing-restaurant-website',
+    number: '03',
+    title: 'Restaurant Website',
+    formOption: 'Restaurant Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹6,000',
+    description:
+      'An appetizing hospitality showcase designed around your dining atmosphere and menu.',
+    features: [
+      'Restaurant introduction',
+      'Menu showcase',
+      'Food gallery',
+      'Contact and location details',
+    ],
+  },
+  {
+    id: 'pricing-gym-fitness',
+    number: '04',
+    title: 'Gym & Fitness Website',
+    formOption: 'Gym & Fitness Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹6,000',
+    description:
+      'A high-energy fitness studio website highlighting training programs and club facilities.',
+    features: [
+      'Fitness services',
+      'Training programs',
+      'Gallery',
+      'Contact section',
+    ],
+  },
+  {
+    id: 'pricing-college-education',
+    number: '05',
+    title: 'College & Education Website',
+    formOption: 'College & Education Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹10,000',
+    description:
+      'An organized institutional website presenting academic courses, departments, and campus life.',
+    features: [
+      'College introduction',
+      'Courses and departments',
+      'Facilities section',
+      'Gallery',
+      'Contact information',
+    ],
+  },
+  {
+    id: 'pricing-portfolio-website',
+    number: '06',
+    title: 'Portfolio Website',
+    formOption: 'Portfolio Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹5,000',
+    description:
+      'A refined personal or creative showcase crafted for photographers, creators, and specialists.',
+    features: [
+      'Professional introduction',
+      'Projects showcase',
+      'Skills and services',
+      'Contact section',
+    ],
+  },
+  {
+    id: 'pricing-ecommerce-website',
+    number: '07',
+    title: 'E-commerce Website',
+    formOption: 'E-commerce Website',
+    priceLabel: 'Starting from',
+    priceValue: '₹25,000',
+    description:
+      'A structured online storefront designed for product discovery and smooth customer ordering.',
+    features: [
+      'Product catalogue',
+      'Shopping cart',
+      'Product details',
+      'Checkout integration',
+      'Order management, subject to agreed scope',
+    ],
+  },
+  {
+    id: 'pricing-custom-web-app',
+    number: '08',
+    title: 'Custom Web Application',
+    formOption: 'Custom Web Application',
+    priceLabel: 'Price',
+    priceValue: 'Custom quotation',
+    description:
+      'Tailored frontend and full-stack interfaces engineered around specialized workflows.',
+    features: [
+      'Custom requirements',
+      'Advanced functionality',
+      'Database integration where required',
+      'Custom UI/UX',
+      'Project-specific development',
+    ],
+    featured: true,
+  },
+];
 
 export const SERVICES: ServiceItem[] = [
   {

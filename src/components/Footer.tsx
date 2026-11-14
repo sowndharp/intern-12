@@ -68,6 +68,16 @@ export function Footer() {
               Services
             </a>
             <a
+              href="#pricing"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection('#pricing');
+              }}
+              className="transition-colors hover:text-[#e9bd67]"
+            >
+              Pricing
+            </a>
+            <a
               href="#projects"
               onClick={(e) => {
                 e.preventDefault();
