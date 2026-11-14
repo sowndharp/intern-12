@@ -53,7 +53,7 @@ export interface TeamMember {
   whatsappUrl: string;
 }
 
-export const HERO_VISUAL = '/assets/hero-studio.jpg';
+export const HERO_VISUAL = '/assets/black-wolf-hero.png';
 
 export const SERVICES: ServiceItem[] = [
   {

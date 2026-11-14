@@ -27,7 +27,7 @@ export function Hero() {
       id="home"
       className="relative isolate flex min-h-[620px] items-center overflow-hidden border-b border-[#c79c4b]/25 bg-[#070707] pt-16 pb-20 sm:min-h-[680px] sm:pt-20 sm:pb-24 lg:min-h-[760px] lg:py-28"
     >
-      {/* Full-Width CSS Background Image (/assets/hero-studio.jpg) */}
+      {/* Full-Width CSS Background Image (/assets/black-wolf-hero.png) */}
       <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
         <div className="hero-bg-layer absolute inset-0 opacity-80" />
       </div>

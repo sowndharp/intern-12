@@ -109,22 +109,16 @@
 }
 
 .hero-bg-layer {
-  background-image: url("/assets/hero-studio.jpg");
+  background-image: url("/assets/black-wolf-hero.png");
   background-size: cover;
-  background-position: 78% 42%;
+  background-position: 82% center;
   background-repeat: no-repeat;
   animation: heroBgDrift 22s ease-in-out infinite;
 }
 
 @media (min-width: 768px) {
   .hero-bg-layer {
-    background-position: 68% 45%;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-bg-layer {
-    background-position: center 45%;
+    background-position: center;
   }
 }
 
