@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Manrope", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 84px;
+    background-color: #080808;
+    color: #f6f3ec;
+    font-family: var(--font-sans);
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+}
+
+@keyframes ambientDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translate3d(2%, -2.5%, 0) scale(1.06);
+    opacity: 0.65;
+  }
+}
+
+@keyframes goldParticleFloat {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.55;
+  }
+  80% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate3d(18px, -72px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes heroEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-ambient-drift {
+  animation: ambientDrift 14s ease-in-out infinite;
+}
+
+.animate-particle {
+  animation: goldParticleFloat var(--particle-duration, 10s) linear infinite;
+  animation-delay: var(--particle-delay, 0s);
+}
+
+.animate-hero-enter {
+  animation: heroEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.animate-hero-enter-delayed {
+  animation: heroEnter 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.14s both;
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes heroBgDrift {
+  0%,
+  100% {
+    transform: scale(1.01) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.045) translate3d(-0.6%, -0.4%, 0);
+  }
+}
+
+.hero-bg-layer {
+  background-image: url("/assets/hero-studio.jpg");
+  background-size: cover;
+  background-position: 78% 42%;
+  background-repeat: no-repeat;
+  animation: heroBgDrift 22s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .hero-bg-layer {
+    background-position: 68% 45%;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-bg-layer {
+    background-position: center 45%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-ambient-drift,
+  .animate-particle,
+  .animate-hero-enter,
+  .animate-hero-enter-delayed,
+  .hero-bg-layer {
+    animation: none !important;
+    transform: none !important;
+  }
+  .reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
